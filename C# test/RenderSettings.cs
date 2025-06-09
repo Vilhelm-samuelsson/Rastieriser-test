@@ -11,6 +11,6 @@ namespace MainEngine
         public const int frames = 20;
         public static int frame = 0;
 
-        public static int fps = 24;
+        public static float fps = 12;
     }
 }

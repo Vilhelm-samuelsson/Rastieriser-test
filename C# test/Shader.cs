@@ -5,13 +5,14 @@ namespace MainEngine
 {
     public abstract class Shader
     {
+        public bool smoothnormals = false;
         public bool dubblesided = false;
         public abstract float3 pixelcolor(float deapth, Vector3 normal, Vector2 texcord);
     }
 
     public class TextureShader : Shader
     {
-        public static Vector3 LightDirection = new Vector3(0.3f, -0.5f, -0.3f);
+        public static Vector3 LightDirection = new Vector3(0.3f, 0.5f, -0.3f);
         public float lightintensity = 1.3f;
         public Vector3 MainLightcolor = new Vector3(0.4f, 0.35f, 0.33f);
 

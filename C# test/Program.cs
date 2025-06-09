@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Diagnostics;
 using MainEngine.Rendering;
-using Raylib_cs;
+//using Raylib_cs;
 using Microsoft.AspNetCore.Components.RenderTree;
 
 namespace MainEngine
@@ -59,6 +59,7 @@ namespace MainEngine
             Gameobject room = scene.AddObjectByMeshName("cube");
             room.transform.postion.Z = 5;
             room.transform.postion.X = 2;
+            room.transform.jaw = 2.5f;
 
             TextureShader Roomshader = new TextureShader();
             Roomshader.color = new float3(0.5f, 0.4f, 0.4f);
@@ -67,11 +68,14 @@ namespace MainEngine
             a.mesh.shader = ashader;
         }
 
+
         public static void Update()
         {
 
             if (!RenderSettings.rendertofile)
             {
+
+                #if false 
                 float camspeed = 3f;
 
                 float camerasens = 105f;
@@ -94,6 +98,9 @@ namespace MainEngine
 
                 Raylib.SetMousePosition(RenderSettings.Imagewidth / 2, RenderSettings.Imageheight / 2);
                 Raylib.HideCursor();
+
+                #endif
+
             }
             else
             {
@@ -102,9 +109,9 @@ namespace MainEngine
 
                 camera.transform.postion = Vector3.Zero;
             }
-         
-            scene.gameobjects[0].transform.pitch += 0.5f * Time.DeltaTime;
-            scene.gameobjects[0].transform.jaw += 0.3f * Time.DeltaTime;
+
+            scene.gameobjects[0].transform.pitch += 1f * Time.DeltaTime;
+            scene.gameobjects[0].transform.jaw += 0.6f * Time.DeltaTime;
         }
 
         public static byte[] BuildTexture(Rendertarget target,byte[] bytes)
@@ -128,11 +135,11 @@ namespace MainEngine
                     Update();
 
                     ImageRenderer.Render(scene, target);
-                    RenderSettings.frame = i;
                 }
             }
             else
             {
+                #if false
                 Raylib.InitWindow(RenderSettings.Imagewidth, RenderSettings.Imageheight, "Engine");
                 Raylib.MaximizeWindow();
 
@@ -162,6 +169,7 @@ namespace MainEngine
                 }
 
                 Raylib.CloseWindow();
+                #endif
 
             }
           

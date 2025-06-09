@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\C# test.csproj": {}
+    "/Users/vilhelmsamuelsson/Documents/Test/Rastieriser-test/C# test/C# test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\C# test.csproj": {
+    "/Users/vilhelmsamuelsson/Documents/Test/Rastieriser-test/C# test/C# test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\C# test.csproj",
+        "projectUniqueName": "/Users/vilhelmsamuelsson/Documents/Test/Rastieriser-test/C# test/C# test.csproj",
         "projectName": "C# test",
-        "projectPath": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\C# test.csproj",
-        "packagesPath": "C:\\Users\\vilhe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\obj\\",
+        "projectPath": "/Users/vilhelmsamuelsson/Documents/Test/Rastieriser-test/C# test/C# test.csproj",
+        "packagesPath": "/Users/vilhelmsamuelsson/.nuget/packages/",
+        "outputPath": "/Users/vilhelmsamuelsson/Documents/Test/Rastieriser-test/C# test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vilhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/vilhelmsamuelsson/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -39,11 +37,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "imports": [
             "net461",
             "net462",
@@ -63,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

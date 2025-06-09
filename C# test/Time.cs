@@ -1,4 +1,4 @@
-using Raylib_cs;
+//using Raylib_cs;
 
 namespace MainEngine
 {
@@ -8,13 +8,14 @@ namespace MainEngine
 
         static float deltaTime()
         {
-            if (RenderSettings.rendertofile) 
+            if (RenderSettings.rendertofile)
             {
-                return 1 / RenderSettings.fps;
+                return 1f / RenderSettings.fps;
             }
             else
             {
-                return Raylib.GetFrameTime();
+                return 1;
+              //  return Raylib.GetFrameTime();
             }
         }
     }
