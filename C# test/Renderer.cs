@@ -1,6 +1,9 @@
 using System.Numerics;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Raylib_cs;
+using Microsoft.AspNetCore.Connections;
+using MainEngine.Rendering;
 
 namespace MainEngine.Rendering
 {
@@ -41,33 +44,32 @@ namespace MainEngine.Rendering
 
 
         }
-        public static Vector3 TransformToscreenSpace(Vector3 point, Vector2 size, Transform transform, float fov)
+        public static Vector3 TransformToscreenSpace(Vector3 point, Vector2 size, Transform transform, Camera camera)
         {
             point = transform.ToWorldPoint(point);
+            point = camera.transform.ToLocalPoint(point);
 
-            float screenheight_world = MathF.Tan(fov / 2) * 2;
+            float screenheight_world = MathF.Tan(camera.fov / 2) * 2;
             float pixelsperworldunit = size.Y / screenheight_world / point.Z;
 
             Vector2 pixeloffset = new Vector2(point.X, point.Y) * pixelsperworldunit;
             return new Vector3(size / 2 + pixeloffset, point.Z);
         }
 
-        public static void Render(Scene scene)
+        public static void Render(Scene scene, Rendertarget target)
         {
-
-            Rendertarget rendertarget = new Rendertarget(RenderSettings.Imagewidth, RenderSettings.Imageheight);
-
-            RenderImage(rendertarget, scene);
+            RenderImage(target, scene);
 
             RenderSettings.frame++;
         }
+
         public static void RenderImage(Rendertarget rendertarget, Scene scene)
         {
             for (int i = 0; i < rendertarget.DeapthBuffer.GetLength(0); i++)
             {
                 rendertarget.DeapthBuffer[i] = float.PositiveInfinity;
+                rendertarget.ColorBuffer[i] = new float3(0, 0, 0);
             }
-
 
             for (int o = 0; o < scene.gameobjects.Count; o++)
             {
@@ -75,12 +77,13 @@ namespace MainEngine.Rendering
                 Vector3[] Verts = objecttorender.mesh.Verts;
                 int[] indecis = objecttorender.mesh.indecies;
 
-
                 for (int i = 0; i < indecis.Length; i += 3)
                 {
-                    Vector3 a3 = TransformToscreenSpace(Verts[indecis[i]], rendertarget.size, objecttorender.transform, scene.camera.fov);
-                    Vector3 b3 = TransformToscreenSpace(Verts[indecis[i + 1]], rendertarget.size, objecttorender.transform, scene.camera.fov);
-                    Vector3 c3 = TransformToscreenSpace(Verts[indecis[i + 2]], rendertarget.size, objecttorender.transform, scene.camera.fov);
+                    Vector3 a3 = TransformToscreenSpace(Verts[indecis[i]], rendertarget.size, objecttorender.transform, scene.camera);
+                    Vector3 b3 = TransformToscreenSpace(Verts[indecis[i + 1]], rendertarget.size, objecttorender.transform, scene.camera);
+                    Vector3 c3 = TransformToscreenSpace(Verts[indecis[i + 2]], rendertarget.size, objecttorender.transform, scene.camera);
+
+                    if (a3.Z <= 0 || b3.Z <= 0 || c3.Z <= 0) continue;
 
                     Vector2 a = new Vector2(a3.X, a3.Y);
                     Vector2 b = new Vector2(b3.X, b3.Y);
@@ -112,7 +115,8 @@ namespace MainEngine.Rendering
                                 if (deapth >= rendertarget.DeapthBuffer[pixelindex]) continue;
 
                                 Vector3 Normal = Vector3.Zero;
-                                Normal = objecttorender.mesh.normals[i / 3];
+                                Normal = objecttorender.mesh.normals[Math.Clamp(i / 3, 0, objecttorender.mesh.normals.Length - 1)];
+                                Normal = objecttorender.transform.transformednormal(Normal);
 
                                 rendertarget.ColorBuffer[pixelindex] = objecttorender.mesh.shader.pixelcolor(deapth, Normal, Vector2.One);
                                 rendertarget.DeapthBuffer[pixelindex] = deapth;
@@ -122,9 +126,7 @@ namespace MainEngine.Rendering
                 }
             }
 
-
-
-            writedatatofile(rendertarget, "TestImage");
+          //  writedatatofile(rendertarget, "TestImage");
         }
 
         public static void writedatatofile(Rendertarget image, string name)

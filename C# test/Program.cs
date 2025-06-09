@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Diagnostics;
 using MainEngine.Rendering;
+using Raylib_cs;
 
 namespace MainEngine
 {
@@ -13,20 +14,10 @@ namespace MainEngine
         public Transform transform = new Transform();
         public float fov;
     }
-
-    public class Rendertarget(int w, int h)
-    {
-        public readonly float3[] ColorBuffer = new float3[w * h];
-        public readonly float[] DeapthBuffer = new float[w * h];
-
-        public readonly int Height = h;
-        public readonly int Width = w;
-        public readonly Vector2 size = new(w, h);
-    }
     public struct float3(float X, float Y, float Z)
     {
         public float x = X;
-        public float y = Y;
+        public float y = Y; 
         public float z = Z;
 
         public float r { get => x; set => x = value; }
@@ -40,41 +31,114 @@ namespace MainEngine
         public float y = Y;
     }
 
-    public static class Engine
+    public static class Program
     {
         public static Scene scene = new Scene();
+        public static Camera camera = new Camera();
 
         public static void Start()
         {
-            Camera camera = new Camera();
             camera.fov = 70;
 
             scene.camera = camera;
-            Gameobject a = scene.AddObjectByMeshName("m");
+            Gameobject a = scene.AddObjectByMeshName("s");
             a.transform.postion.Z = 5;
-            a.transform.rotation.Y = 0.25f;
 
             TextureShader ashader = new TextureShader();
             ashader.color = new float3(1, 1, 1);
 
+            Gameobject room = scene.AddObjectByMeshName("cube");
+            room.transform.postion.Z = 5;
+            room.transform.postion.X = 2;
+
+            TextureShader Roomshader = new TextureShader();
+            Roomshader.color = new float3(0.5f, 0.4f, 0.4f);
+
+            room.mesh.shader = Roomshader;
             a.mesh.shader = ashader;
         }
 
-        static void Main()
+        public static void Update()
         {
-            Start();
+            float camspeed = 3f;
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            float camerasens = 105f;
 
-            float lasttime = stopwatch.ElapsedMilliseconds;
-            for (int i = 0; i < RenderSettings.frames; i++)
+            Vector2 mousedelta = Raylib.GetMouseDelta() * camerasens / RenderSettings.Imagewidth ;
+            camera.transform.pitch -= mousedelta.Y * Time.DeltaTime;
+            camera.transform.jaw += mousedelta.X * Time.DeltaTime;
+
+            (Vector3 camright, Vector3 camup, Vector3 camforward) = camera.transform.GetBasisVector();
+
+
+            Vector3 camdelta = Vector3.Zero;
+            if (Raylib.IsKeyDown(KeyboardKey.W)) camdelta += camforward * camspeed * Time.DeltaTime;
+            if (Raylib.IsKeyDown(KeyboardKey.A)) camdelta -= camright * camspeed * Time.DeltaTime;
+            if (Raylib.IsKeyDown(KeyboardKey.S)) camdelta -= camforward * camspeed * Time.DeltaTime;
+            if (Raylib.IsKeyDown(KeyboardKey.D)) camdelta += camright * camspeed * Time.DeltaTime;
+
+            camera.transform.postion += camdelta;
+
+            Raylib.SetMousePosition(RenderSettings.Imagewidth / 2, RenderSettings.Imageheight / 2);
+            Raylib.HideCursor();
+
+
+            scene.gameobjects[0].transform.pitch += 0.5f * Time.DeltaTime;
+            scene.gameobjects[0].transform.jaw += 0.3f * Time.DeltaTime;
+        }
+
+        public static byte[] BuildTexture(Rendertarget target,byte[] bytes)
+        {
+            for(int i = 0; i < bytes.Length; i += 4)
             {
-                ImageRenderer.Render(scene);
-                Debug.Print((stopwatch.ElapsedMilliseconds - lasttime).ToString());
-                lasttime = stopwatch.ElapsedMilliseconds;
-                RenderSettings.frame++;
+                bytes[i] = (byte)(target.ColorBuffer[i / 4].r * 255);
+                bytes[i + 1] = (byte)(target.ColorBuffer[i / 4].g * 255);
+                bytes[i + 2] = (byte)(target.ColorBuffer[i / 4].b * 255);
+                bytes[i + 3] = (byte)255;
             }
+            return bytes;
+        }
+
+        public static void Run(Scene scene, Rendertarget target)
+        {
+            Raylib.InitWindow(RenderSettings.Imagewidth, RenderSettings.Imageheight, "Engine");
+            Raylib.MaximizeWindow();
+
+            Texture2D texture = Raylib.LoadTextureFromImage(Raylib.GenImageColor(target.Width, target.Height, Color.Red));
+            byte[] texturebytes = new byte[RenderSettings.Imagewidth * RenderSettings.Imageheight * 4];
+
+            while (!Raylib.WindowShouldClose())
+            {
+                Update();
+
+                //render
+                ImageRenderer.Render(scene, target);
+                texturebytes = BuildTexture(target, texturebytes);
+
+                //apply bytes to texture
+                Raylib.UpdateTexture(texture, texturebytes);
+
+
+                //draw to screeen
+                Raylib.BeginDrawing();
+
+                Raylib.DrawTexture(texture, 0, 0, Color.White);
+
+                RenderSettings.frame++;
+
+                Raylib.EndDrawing();
+            }
+
+            Raylib.CloseWindow();
+        }
+
+        public static void Main()
+        {
+
+            Rendertarget rendertarget = new Rendertarget(RenderSettings.Imagewidth, RenderSettings.Imageheight);
+
+            Start();
+            Run(scene, rendertarget);
         }
 
 

@@ -63,8 +63,6 @@ namespace MainEngine
             mesh.TriColor = new float3[mesh.Verts.Length / 3];
             mesh.normals = FaceNormals.ToArray();
 
-            Debug.Print("N:" + (mesh.normals.Length * 3).ToString());
-            Debug.Print("T:" + mesh.indecies.Length.ToString());
 
             return mesh;
         }

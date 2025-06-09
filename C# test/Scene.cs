@@ -11,6 +11,9 @@ namespace MainEngine
             Gameobject Gobject = new Gameobject(FileName);
             Gobject.mesh = mesh;
 
+            Gobject.transform.pitch = 0;
+            Gobject.transform.jaw = 0;
+
             gameobjects.Add(Gobject);
             return Gobject;
         }

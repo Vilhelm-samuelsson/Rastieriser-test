@@ -1,10 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>C__test</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Raylib-cs">
+      <HintPath>..\..\..\..\Downloads\raylib-cs-master\raylib-cs-master\Raylib-cs\bin\Debug\net8.0\Raylib-cs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>
