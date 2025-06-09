@@ -6,6 +6,7 @@ using System.Numerics;
 using System.Diagnostics;
 using MainEngine.Rendering;
 using Raylib_cs;
+using Microsoft.AspNetCore.Components.RenderTree;
 
 namespace MainEngine
 {
@@ -36,6 +37,14 @@ namespace MainEngine
         public static Scene scene = new Scene();
         public static Camera camera = new Camera();
 
+        public static void Main()
+        {
+            Rendertarget rendertarget = new Rendertarget(RenderSettings.Imagewidth, RenderSettings.Imageheight);
+
+            Start();
+            Run(scene, rendertarget);
+        }
+
         public static void Start()
         {
             camera.fov = 70;
@@ -60,29 +69,40 @@ namespace MainEngine
 
         public static void Update()
         {
-            float camspeed = 3f;
 
-            float camerasens = 105f;
+            if (!RenderSettings.rendertofile)
+            {
+                float camspeed = 3f;
 
-            Vector2 mousedelta = Raylib.GetMouseDelta() * camerasens / RenderSettings.Imagewidth ;
-            camera.transform.pitch -= mousedelta.Y * Time.DeltaTime;
-            camera.transform.jaw += mousedelta.X * Time.DeltaTime;
+                float camerasens = 105f;
 
-            (Vector3 camright, Vector3 camup, Vector3 camforward) = camera.transform.GetBasisVector();
-
-
-            Vector3 camdelta = Vector3.Zero;
-            if (Raylib.IsKeyDown(KeyboardKey.W)) camdelta += camforward * camspeed * Time.DeltaTime;
-            if (Raylib.IsKeyDown(KeyboardKey.A)) camdelta -= camright * camspeed * Time.DeltaTime;
-            if (Raylib.IsKeyDown(KeyboardKey.S)) camdelta -= camforward * camspeed * Time.DeltaTime;
-            if (Raylib.IsKeyDown(KeyboardKey.D)) camdelta += camright * camspeed * Time.DeltaTime;
-
-            camera.transform.postion += camdelta;
-
-            Raylib.SetMousePosition(RenderSettings.Imagewidth / 2, RenderSettings.Imageheight / 2);
-            Raylib.HideCursor();
+                Vector2 mousedelta = Raylib.GetMouseDelta() * camerasens / RenderSettings.Imagewidth;
+                camera.transform.pitch -= mousedelta.Y * Time.DeltaTime;
+                camera.transform.jaw += mousedelta.X * Time.DeltaTime;
 
 
+                (Vector3 camright, Vector3 camup, Vector3 camforward) = camera.transform.GetBasisVector();
+
+
+                Vector3 camdelta = Vector3.Zero;
+                if (Raylib.IsKeyDown(KeyboardKey.W)) camdelta += camforward * camspeed * Time.DeltaTime;
+                if (Raylib.IsKeyDown(KeyboardKey.A)) camdelta -= camright * camspeed * Time.DeltaTime;
+                if (Raylib.IsKeyDown(KeyboardKey.S)) camdelta -= camforward * camspeed * Time.DeltaTime;
+                if (Raylib.IsKeyDown(KeyboardKey.D)) camdelta += camright * camspeed * Time.DeltaTime;
+
+                camera.transform.postion += camdelta;
+
+                Raylib.SetMousePosition(RenderSettings.Imagewidth / 2, RenderSettings.Imageheight / 2);
+                Raylib.HideCursor();
+            }
+            else
+            {
+                camera.transform.pitch = 0;
+                camera.transform.jaw = 0;
+
+                camera.transform.postion = Vector3.Zero;
+            }
+         
             scene.gameobjects[0].transform.pitch += 0.5f * Time.DeltaTime;
             scene.gameobjects[0].transform.jaw += 0.3f * Time.DeltaTime;
         }
@@ -101,44 +121,51 @@ namespace MainEngine
 
         public static void Run(Scene scene, Rendertarget target)
         {
-            Raylib.InitWindow(RenderSettings.Imagewidth, RenderSettings.Imageheight, "Engine");
-            Raylib.MaximizeWindow();
-
-            Texture2D texture = Raylib.LoadTextureFromImage(Raylib.GenImageColor(target.Width, target.Height, Color.Red));
-            byte[] texturebytes = new byte[RenderSettings.Imagewidth * RenderSettings.Imageheight * 4];
-
-            while (!Raylib.WindowShouldClose())
+            if (RenderSettings.rendertofile)
             {
-                Update();
+                for (int i = 0; i < RenderSettings.frames; i++)
+                {
+                    Update();
 
-                //render
-                ImageRenderer.Render(scene, target);
-                texturebytes = BuildTexture(target, texturebytes);
-
-                //apply bytes to texture
-                Raylib.UpdateTexture(texture, texturebytes);
-
-
-                //draw to screeen
-                Raylib.BeginDrawing();
-
-                Raylib.DrawTexture(texture, 0, 0, Color.White);
-
-                RenderSettings.frame++;
-
-                Raylib.EndDrawing();
+                    ImageRenderer.Render(scene, target);
+                    RenderSettings.frame = i;
+                }
             }
+            else
+            {
+                Raylib.InitWindow(RenderSettings.Imagewidth, RenderSettings.Imageheight, "Engine");
+                Raylib.MaximizeWindow();
 
-            Raylib.CloseWindow();
-        }
+                Texture2D texture = Raylib.LoadTextureFromImage(Raylib.GenImageColor(target.Width, target.Height, Color.Red));
+                byte[] texturebytes = new byte[RenderSettings.Imagewidth * RenderSettings.Imageheight * 4];
 
-        public static void Main()
-        {
+                while (!Raylib.WindowShouldClose())
+                {
+                    Update();
 
-            Rendertarget rendertarget = new Rendertarget(RenderSettings.Imagewidth, RenderSettings.Imageheight);
+                    //render
+                    ImageRenderer.Render(scene, target);
+                    texturebytes = BuildTexture(target, texturebytes);
 
-            Start();
-            Run(scene, rendertarget);
+                    //apply bytes to texture
+                    Raylib.UpdateTexture(texture, texturebytes);
+
+
+                    //draw to screeen
+                    Raylib.BeginDrawing();
+
+                    Raylib.DrawTexture(texture, 0, 0, Color.White);
+
+                    RenderSettings.frame++;
+
+                    Raylib.EndDrawing();
+                }
+
+                Raylib.CloseWindow();
+
+            }
+          
+
         }
 
 

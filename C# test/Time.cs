@@ -8,7 +8,14 @@ namespace MainEngine
 
         static float deltaTime()
         {
-            return Raylib.GetFrameTime();
+            if (RenderSettings.rendertofile) 
+            {
+                return 1 / RenderSettings.fps;
+            }
+            else
+            {
+                return Raylib.GetFrameTime();
+            }
         }
     }
 }

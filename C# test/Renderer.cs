@@ -126,7 +126,11 @@ namespace MainEngine.Rendering
                 }
             }
 
-          //  writedatatofile(rendertarget, "TestImage");
+            if (RenderSettings.rendertofile)
+            {
+                writedatatofile(rendertarget, "RenderedImage");
+            }
+            
         }
 
         public static void writedatatofile(Rendertarget image, string name)
@@ -158,10 +162,10 @@ namespace MainEngine.Rendering
                 col.y *= 255;
                 col.z *= 255;
 
-                writer.Write((byte)col.z);
-                writer.Write((byte)col.y);
-                writer.Write((byte)col.x);
-                writer.Write((byte)0);
+                writer.Write((byte)col.z); // r
+                writer.Write((byte)col.y); // g
+                writer.Write((byte)col.x); // b
+                writer.Write((byte)0); //a
             }
 
         }
