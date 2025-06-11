@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Diagnostics;
 using MainEngine.Rendering;
-//using Raylib_cs;
+using Raylib_cs;
 using Microsoft.AspNetCore.Components.RenderTree;
 
 namespace MainEngine
@@ -48,24 +48,26 @@ namespace MainEngine
         public static void Start()
         {
             camera.fov = 70;
-
             scene.camera = camera;
-            Gameobject a = scene.AddObjectByMeshName("s");
-            a.transform.postion.Z = 5;
 
-            TextureShader ashader = new TextureShader();
-            ashader.color = new float3(1, 1, 1);
+            Gameobject ground = scene.AddObjectByMeshName("plane");
+            ground.transform.postion.Z = 5;
+            ground.transform.postion.Y = 1;
+            ground.transform.pitch = 0;
+            ground.transform.jaw = 0;
 
-            Gameobject room = scene.AddObjectByMeshName("cube");
-            room.transform.postion.Z = 5;
-            room.transform.postion.X = 2;
-            room.transform.jaw = 2.5f;
+            TextureShader GroundShader = scene.ImportTextureToShader("Ground");
+            ground.mesh.shader = GroundShader;
 
-            TextureShader Roomshader = new TextureShader();
-            Roomshader.color = new float3(0.5f, 0.4f, 0.4f);
 
-            room.mesh.shader = Roomshader;
-            a.mesh.shader = ashader;
+            Gameobject cube = scene.AddObjectByMeshName("cube");
+            cube.transform.postion.Z = 3;
+
+            TextureShader Wood = scene.ImportTextureToShader("Basic Old wood_bright_Albedo");
+            Wood.smoothnormals = false;
+
+            cube.mesh.shader = Wood;
+
         }
 
 
@@ -75,14 +77,14 @@ namespace MainEngine
             if (!RenderSettings.rendertofile)
             {
 
-                #if false 
-                float camspeed = 3f;
+              //  #if false 
+                float camspeed = 5f;
 
                 float camerasens = 105f;
 
                 Vector2 mousedelta = Raylib.GetMouseDelta() * camerasens / RenderSettings.Imagewidth;
-                camera.transform.pitch -= mousedelta.Y * Time.DeltaTime;
-                camera.transform.jaw += mousedelta.X * Time.DeltaTime;
+                camera.transform.pitch += mousedelta.Y * Time.DeltaTime;
+                camera.transform.jaw -= mousedelta.X * Time.DeltaTime;
 
 
                 (Vector3 camright, Vector3 camup, Vector3 camforward) = camera.transform.GetBasisVector();
@@ -99,7 +101,7 @@ namespace MainEngine
                 Raylib.SetMousePosition(RenderSettings.Imagewidth / 2, RenderSettings.Imageheight / 2);
                 Raylib.HideCursor();
 
-                #endif
+             //   #endif
 
             }
             else
@@ -110,17 +112,18 @@ namespace MainEngine
                 camera.transform.postion = Vector3.Zero;
             }
 
-            scene.gameobjects[0].transform.pitch += 1f * Time.DeltaTime;
-            scene.gameobjects[0].transform.jaw += 0.6f * Time.DeltaTime;
         }
 
         public static byte[] BuildTexture(Rendertarget target,byte[] bytes)
         {
-            for(int i = 0; i < bytes.Length; i += 4)
+
+            float3[] colorbuffer = target.UpscaledBuffer();
+
+            for (int i = 0; i < bytes.Length; i += 4)
             {
-                bytes[i] = (byte)(target.ColorBuffer[i / 4].r * 255);
-                bytes[i + 1] = (byte)(target.ColorBuffer[i / 4].g * 255);
-                bytes[i + 2] = (byte)(target.ColorBuffer[i / 4].b * 255);
+                bytes[i] = (byte)(colorbuffer[i / 4].r * 255);
+                bytes[i + 1] = (byte)(colorbuffer[i / 4].g * 255);
+                bytes[i + 2] = (byte)(colorbuffer[i / 4].b * 255);
                 bytes[i + 3] = (byte)255;
             }
             return bytes;
@@ -139,12 +142,12 @@ namespace MainEngine
             }
             else
             {
-                #if false
-                Raylib.InitWindow(RenderSettings.Imagewidth, RenderSettings.Imageheight, "Engine");
+             //   #if false
+                Raylib.InitWindow(RenderSettings.Imagewidth * RenderSettings.uppscale, RenderSettings.Imageheight * RenderSettings.uppscale, "Engine");
                 Raylib.MaximizeWindow();
 
-                Texture2D texture = Raylib.LoadTextureFromImage(Raylib.GenImageColor(target.Width, target.Height, Color.Red));
-                byte[] texturebytes = new byte[RenderSettings.Imagewidth * RenderSettings.Imageheight * 4];
+                Texture2D texture = Raylib.LoadTextureFromImage(Raylib.GenImageColor(target.Width * RenderSettings.uppscale, target.Height * RenderSettings.uppscale, Color.Red));
+                byte[] texturebytes = new byte[RenderSettings.Imagewidth * RenderSettings.uppscale * RenderSettings.Imageheight  * RenderSettings.uppscale * 4];
 
                 while (!Raylib.WindowShouldClose())
                 {
@@ -157,7 +160,6 @@ namespace MainEngine
                     //apply bytes to texture
                     Raylib.UpdateTexture(texture, texturebytes);
 
-
                     //draw to screeen
                     Raylib.BeginDrawing();
 
@@ -169,7 +171,7 @@ namespace MainEngine
                 }
 
                 Raylib.CloseWindow();
-                #endif
+           //     #endif
 
             }
           

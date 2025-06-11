@@ -1,4 +1,4 @@
-//using Raylib_cs;
+using Raylib_cs;
 
 namespace MainEngine
 {
@@ -14,8 +14,7 @@ namespace MainEngine
             }
             else
             {
-                return 1;
-              //  return Raylib.GetFrameTime();
+                return Raylib.GetFrameTime();
             }
         }
     }

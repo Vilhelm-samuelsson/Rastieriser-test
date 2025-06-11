@@ -13,5 +13,7 @@ namespace MainEngine
         public Shader shader = new TextureShader();
 
         public Vector3[] normals = new Vector3[0];
+
+        public Vector2[] UVS = new Vector2[0];
     }
 }

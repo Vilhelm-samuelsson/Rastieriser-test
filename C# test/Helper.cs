@@ -7,6 +7,11 @@ namespace MainEngine
 {
     public static class Helper
     {
+        public static Vector3 oneminus(Vector3 vector)
+        {
+            return new Vector3(1 / vector.X, 1 / vector.Y, 1 / vector.Z);
+        }
+
         public static float min(float a, float b)
         {
             if (a > b) { return b; } else { return a; }

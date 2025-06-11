@@ -27,7 +27,7 @@ namespace MainEngine
             _jaw = y;
 
             (ihat,jhat, khat) = GetBasisVector();
-            (invihat, invjhat, invkhat) = GetBasisVector();
+            (invihat, invjhat, invkhat) = GetInverseBasisVector();
         }
 
         public Vector3 ToWorldPoint(Vector3 point)
@@ -37,7 +37,8 @@ namespace MainEngine
 
         public Vector3 ToLocalPoint(Vector3 point)
         {
-            return TransformVector(invihat, invjhat, invkhat, point) - postion;
+            
+            return TransformVector(invihat, invjhat, invkhat, point  - postion);
         }
 
         public Vector3 transformednormal(Vector3 normal)

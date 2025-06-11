@@ -21,5 +21,16 @@ namespace MainEngine.Rendering
                 locks[i] ??= new object();
             }
         }
+
+        public float3[] UpscaledBuffer()
+        {
+            float3[] Uppsscaledbuffer = new float3[Width * RenderSettings.uppscale * Height * RenderSettings.uppscale];
+            for (int i = 0; i < ColorBuffer.Length; i++)
+            {
+                Uppsscaledbuffer[i * (RenderSettings.uppscale * Width / Height) * (RenderSettings.uppscale * Height / Width)] = ColorBuffer[i];
+            }
+
+            return Uppsscaledbuffer;
+        }
     }
 }

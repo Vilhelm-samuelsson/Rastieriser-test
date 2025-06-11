@@ -3,52 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\rendertarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:rendertarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\rendertarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:rendertarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\lightdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:lightdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\rendersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:rendersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\objloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:objloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\rendersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:rendersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|c:\\users\\vilhe\\documents\\github\\rastieriser-test\\c# test\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABF9F1F1-019F-5E6C-B57B-D3F592E7E60B}|C# test.csproj|solutionrelative:gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -72,73 +76,8 @@
         },
         {
           "DockedHeight": 69,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RenderTarget.cs",
-              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\RenderTarget.cs",
-              "RelativeDocumentMoniker": "RenderTarget.cs",
-              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\RenderTarget.cs",
-              "RelativeToolTip": "RenderTarget.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T12:55:14.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Time.cs",
-              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Time.cs",
-              "RelativeDocumentMoniker": "Time.cs",
-              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Time.cs",
-              "RelativeToolTip": "Time.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T11:39:29.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAiwGoAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:38.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Renderer.cs",
-              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Renderer.cs",
-              "RelativeDocumentMoniker": "Renderer.cs",
-              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Renderer.cs",
-              "RelativeToolTip": "Renderer.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAqwIIAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:39.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Transform.cs",
-              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Transform.cs",
-              "RelativeDocumentMoniker": "Transform.cs",
-              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Transform.cs",
-              "RelativeToolTip": "Transform.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:42.259Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -147,27 +86,99 @@
               "RelativeDocumentMoniker": "Shader.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Shader.cs",
               "RelativeToolTip": "Shader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC0AAAB+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:40.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T20:44:40.587Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "LightData.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\LightData.cs",
+              "RelativeDocumentMoniker": "LightData.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\LightData.cs",
+              "RelativeToolTip": "LightData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T16:47:28.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RenderTarget.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\RenderTarget.cs",
+              "RelativeDocumentMoniker": "RenderTarget.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\RenderTarget.cs",
+              "RelativeToolTip": "RenderTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T12:55:14.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Time.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Time.cs",
+              "RelativeDocumentMoniker": "Time.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Time.cs",
+              "RelativeToolTip": "Time.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T11:39:29.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA8wDgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T20:44:38.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Renderer.cs",
+              "RelativeDocumentMoniker": "Renderer.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Renderer.cs",
+              "RelativeToolTip": "Renderer.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAmwI0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T20:44:39.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Transform.cs",
+              "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Transform.cs",
+              "RelativeDocumentMoniker": "Transform.cs",
+              "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Transform.cs",
+              "RelativeToolTip": "Transform.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAwB0AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T20:44:42.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Scene.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Scene.cs",
               "RelativeDocumentMoniker": "Scene.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Scene.cs",
               "RelativeToolTip": "Scene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T20:44:40.932Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "RenderSettings.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\RenderSettings.cs",
               "RelativeDocumentMoniker": "RenderSettings.cs",
@@ -175,58 +186,55 @@
               "RelativeToolTip": "RenderSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:39.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T20:44:39.998Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "OBJloader.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\OBJloader.cs",
               "RelativeDocumentMoniker": "OBJloader.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\OBJloader.cs",
               "RelativeToolTip": "OBJloader.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAUwEsAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCwAAACXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T20:44:37.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Mesh.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Mesh.cs",
               "RelativeDocumentMoniker": "Mesh.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Mesh.cs",
               "RelativeToolTip": "Mesh.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:37.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T20:44:37.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "Helper.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Helper.cs",
               "RelativeDocumentMoniker": "Helper.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\Helper.cs",
               "RelativeToolTip": "Helper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T20:44:36.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "GameObject.cs",
               "DocumentMoniker": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\GameObject.cs",
               "RelativeDocumentMoniker": "GameObject.cs",
               "ToolTip": "C:\\Users\\vilhe\\Documents\\GitHub\\Rastieriser-test\\C# test\\GameObject.cs",
               "RelativeToolTip": "GameObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T20:44:35.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T20:44:35.879Z"
             },
             {
               "$type": "Bookmark",

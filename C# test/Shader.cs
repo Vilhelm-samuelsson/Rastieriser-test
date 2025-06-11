@@ -1,5 +1,7 @@
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
+using MainEngine.Rendering;
+using BigGustave;
 
 namespace MainEngine
 {
@@ -12,32 +14,37 @@ namespace MainEngine
 
     public class TextureShader : Shader
     {
-        public static Vector3 LightDirection = new Vector3(0.3f, 0.5f, -0.3f);
-        public float lightintensity = 1.3f;
-        public Vector3 MainLightcolor = new Vector3(0.4f, 0.35f, 0.33f);
-
-        public float ambientLight = 0.4f;
-        public Vector3 ambientlightcolor = new Vector3(0.35f,0.35f,0.5f);
-
-        public float3 color;
+        public Png MainTexture;
+        public float3 color = new float3(1,1,1);
 
         public override float3 pixelcolor(float deapth, Vector3 normal, Vector2 texcord)
         {
-            normal = Vector3.Normalize(normal);
-            LightDirection = Vector3.Normalize(LightDirection);
+            float3 TextureColor = new float3(255, 255, 255);
 
-            float Light = Helper.max(0,Vector3.Dot(normal, LightDirection) * lightintensity);
+            if (MainTexture != null)
+              TextureColor = SampleTextureAtUv(texcord);
+
+            normal = Vector3.Normalize(normal);
+            Lightdata.LightDirection = Vector3.Normalize(Lightdata.LightDirection);
+
+            float Light = Helper.max(0, Vector3.Dot(normal, Lightdata.LightDirection) * Lightdata.lightintensity);
 
             Vector3 LightColor = new Vector3
             (
-                1 * Light * MainLightcolor.X + ambientLight * ambientlightcolor.X,
-                1 * Light * MainLightcolor.Y + ambientLight * ambientlightcolor.Y,
-                1 * Light * MainLightcolor.Z + ambientLight * ambientlightcolor.Z
+                1 * Light * Lightdata.MainLightcolor.X + Lightdata.ambientLight * Lightdata.ambientlightcolor.X,
+                1 * Light * Lightdata.MainLightcolor.Y + Lightdata.ambientLight * Lightdata.ambientlightcolor.Y,
+                1 * Light * Lightdata.MainLightcolor.Z + Lightdata.ambientLight * Lightdata.ambientlightcolor.Z
             );
 
-            float3 finalcolor = new float3(color.x * LightColor.X, color.y * LightColor.Y, color.z * LightColor.Z);
-           
+            float3 finalcolor = new float3(TextureColor.x / 255 * color.x * LightColor.X, TextureColor.y / 255 * color.y * LightColor.Y, TextureColor.z / 255 * color.z * LightColor.Z);
+
             return finalcolor;
+        }
+
+        public float3 SampleTextureAtUv(Vector2 uv)
+        {
+            Pixel pixel = MainTexture.GetPixel(Math.Clamp((int)Math.Ceiling(uv.X * MainTexture.Width),0 ,MainTexture.Width - 1), Math.Clamp((int)Math.Ceiling(uv.Y * MainTexture.Height),0,MainTexture.Height - 1));
+            return new float3(pixel.R, pixel.G, pixel.B);
         }
     }
 
@@ -46,7 +53,7 @@ namespace MainEngine
         public override float3 pixelcolor(float deapth, Vector3 normal, Vector2 texcord)
         {
             normal = Vector3.Abs(normal);
-            
+
             return new float3(normal.X * 255, normal.Y * 255, normal.Z * 255);
         }
     }
